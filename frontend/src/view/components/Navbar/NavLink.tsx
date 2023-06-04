@@ -1,11 +1,11 @@
-import React from 'react';
 import { createStyles } from '@mantine/core';
 import { BaseComponent } from '../../../app/interfaces/BaseComponent';
 import { useGenericStyles } from '../../../app/styles/useGenericStyles';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 interface NavLinkProps extends BaseComponent {
-    href: string;
+    to: string;
 }
 
 const useStyles = createStyles((theme) => ({
@@ -18,13 +18,13 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export const NavLink = ({ children, href }: NavLinkProps) => {
+export const NavLink = ({ children, to }: NavLinkProps) => {
     const { classes } = useStyles();
     const { classes: genericClasses } = useGenericStyles();
 
     return (
-        <a href={href} className={classNames(classes.link, genericClasses.hoverable)}>
+        <Link to={to} className={classNames(classes.link, genericClasses.hoverable)}>
             {children}
-        </a>
+        </Link>
     );
 };

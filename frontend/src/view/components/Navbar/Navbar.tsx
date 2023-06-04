@@ -1,9 +1,9 @@
-import React from 'react';
 import { createStyles, Grid } from '@mantine/core';
 import { ChildlessBaseComponent } from '../../../app/interfaces/BaseComponent';
 import classNames from 'classnames';
 import { NavLink } from './NavLink';
 import { colors } from '../../../app/constants/colors';
+import { ROUTES } from '../../../app/constants/routes';
 
 const useStyles = createStyles((theme) => ({
     navbarContainer: {
@@ -28,8 +28,11 @@ export const Navbar = ({ className }: ChildlessBaseComponent) => {
                 <img src="/images/ET-logo.png" alt="Events travel logo" />
             </Grid.Col>
             <Grid.Col span={6} className={classes.linksContainer}>
-                <NavLink href="#">Home</NavLink>
-                <NavLink href="#">Tickets</NavLink>
+                {ROUTES.map((route) => (
+                    <NavLink key={route.path} to={route.path}>
+                        {route.name}
+                    </NavLink>
+                ))}
             </Grid.Col>
         </Grid>
     );
