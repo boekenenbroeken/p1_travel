@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { NavLink } from './NavLink';
 import { colors } from '../../../app/constants/colors';
 import { ROUTES } from '../../../app/constants/routes';
+import { GRID } from '../../../app/constants/grid';
 
 const useStyles = createStyles((theme) => ({
     navbarContainer: {
@@ -24,10 +25,10 @@ export const Navbar = ({ className }: ChildlessBaseComponent) => {
 
     return (
         <Grid className={classNames(className, classes.navbarContainer)}>
-            <Grid.Col span={6}>
+            <Grid.Col span={GRID.halfColumn}>
                 <img src="/images/ET-logo.png" alt="Events travel logo" />
             </Grid.Col>
-            <Grid.Col span={6} className={classes.linksContainer}>
+            <Grid.Col span={GRID.halfColumn} className={classes.linksContainer}>
                 {ROUTES.map((route) => (
                     <NavLink key={route.path} to={route.path}>
                         {route.name}

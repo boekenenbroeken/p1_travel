@@ -1,4 +1,3 @@
-import React from 'react';
 import { BaseComponent } from '../../../app/interfaces/BaseComponent';
 import classNames from 'classnames';
 import { createStyles } from '@mantine/core';
