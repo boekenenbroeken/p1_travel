@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "fed0bf66-0bd6-4c69-8d24-0bec2577ae4b",
+		"name": "fe-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tickets"
+					]
+				},
+				"description": "Get all the tickets from inmemory db"
+			},
+			"response": []
+		},
+		{
+			"name": "POST tickets",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ticket\": {\n        \"title\": \"!\",\n        \"description\": \"test description\",\n        \"price\": 10,\n        \"amount\": 4,\n        \"supplier\": \"test supplier\",\n        \"email\": \"test@gmail.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/tickets",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"tickets"
+					]
+				},
+				"description": "Adds a ticket to the inmemory db"
+			},
+			"response": []
+		}
+	]
+}
