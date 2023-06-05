@@ -11,7 +11,7 @@ export interface AddTicketsFormValues {
     [FormFields.EMAIL]: string;
     [FormFields.TITLE]: string;
     [FormFields.DESCRIPTION]: string;
-    [FormFields.PRICE]: number;
+    [FormFields.PRICE]: number | string;
     [FormFields.AMOUNT]: number;
     [FormFields.SUPPLIER]: string;
 }

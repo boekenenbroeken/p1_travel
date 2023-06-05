@@ -7,7 +7,7 @@ export const INITIAL_VALUES: AddTicketsFormValues = {
     [FormFields.EMAIL]: '',
     [FormFields.TITLE]: '',
     [FormFields.DESCRIPTION]: '',
-    [FormFields.PRICE]: 0,
+    [FormFields.PRICE]: '',
     [FormFields.AMOUNT]: 1,
     [FormFields.SUPPLIER]: '',
 };
@@ -16,7 +16,10 @@ export const validationSchema = Yup.object().shape({
     [FormFields.EMAIL]: Yup.string().email('Invalid email address').required('Email is required'),
     [FormFields.TITLE]: Yup.string().required('Title is required'),
     [FormFields.DESCRIPTION]: Yup.string().required('Description is required'),
-    [FormFields.PRICE]: Yup.number().required('Price is required'),
+    [FormFields.PRICE]: Yup.number()
+        .required('Price is required')
+        .positive('Amount must be a positive number')
+        .typeError('Price must be a number'),
     [FormFields.AMOUNT]: Yup.number()
         .required('Amount is required')
         .positive('Amount must be a positive number'),

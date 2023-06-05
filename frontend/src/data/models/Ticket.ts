@@ -3,7 +3,7 @@ export interface Ticket {
     email: string;
     title: string;
     description: string;
-    price: number;
+    price: number | null;
     amount: number;
     supplier: string;
 }
