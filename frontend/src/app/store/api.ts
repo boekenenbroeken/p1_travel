@@ -8,7 +8,7 @@ const axios = axiosLib.create({
     baseURL: 'http://localhost:5001/',
 });
 
-export const fetchTickets = () => async (dispatch: AppDispatch) => {
+export const getTickets = () => async (dispatch: AppDispatch) => {
     try {
         dispatch(getTicketsStart());
 

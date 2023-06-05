@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
-import { Paper, createStyles, Center } from '@mantine/core';
-import { PageLayout } from '../../../view/components/PageLayout/PageLayout';
-import { colors } from '../../constants/colors';
-import { TicketsListTable } from '../../tables/TicketsListTable';
-import { fetchTickets } from '../../store/api';
 import { useDispatch, useSelector } from 'react-redux';
+import { Paper, createStyles, Center } from '@mantine/core';
 import type { AppDispatch, RootState } from '../../store/store';
+import { getTickets } from '../../store/api';
+import { colors } from '../../constants/colors';
+import { PageLayout } from '../../../view/components/PageLayout/PageLayout';
+import { TicketsListTable } from '../../tables/TicketsListTable';
+import { Loader } from '../../../view/components/Loader/Loader';
+import { Error } from '../../../view/components/Error/Error';
 
 const useStyles = createStyles((theme) => ({
     formContainer: {
@@ -25,11 +27,11 @@ export const TicketsListPage = () => {
     const { data, loading, error } = useSelector((state: RootState) => state.tickets);
 
     useEffect(() => {
-        dispatch(fetchTickets());
-    }, []);
+        dispatch(getTickets());
+    }, [dispatch]);
 
-    if (loading) return <div>Loading...</div>;
-    if (error) return <div>Oops something went wrong</div>;
+    if (loading) return <Loader />;
+    if (error) return <Error />;
 
     return (
         <PageLayout>
