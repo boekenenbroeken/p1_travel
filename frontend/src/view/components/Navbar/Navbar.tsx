@@ -18,6 +18,12 @@ const useStyles = createStyles((theme) => ({
         justifyContent: 'flex-end',
         flexShrink: 0,
     },
+    img: {
+        height: 60,
+        '@media (max-width: 768px)': {
+            height: 45,
+        },
+    },
 }));
 
 export const Navbar = () => {
@@ -27,7 +33,11 @@ export const Navbar = () => {
         <Grid className={classes.navbarContainer}>
             <Grid.Col span={GRID.halfColumn}>
                 <Link to="/">
-                    <img src="/images/ET-logo.png" alt="Events travel logo" />
+                    <img
+                        className={classes.img}
+                        src="/images/ET-logo.png"
+                        alt="Events travel logo"
+                    />
                 </Link>
             </Grid.Col>
             <Grid.Col span={GRID.halfColumn} className={classes.linksContainer}>
