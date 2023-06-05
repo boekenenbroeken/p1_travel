@@ -31,9 +31,10 @@ export const FormField: React.FC<Props> = ({ label, name, type, value, error, on
 
     return (
         <div className={classes.wrapper}>
-            <FormLabel>{label}</FormLabel>
+            <FormLabel htmlFor={name}>{label}</FormLabel>
             {type === 'textarea' ? (
                 <Textarea
+                    id={name}
                     onChange={(event) => onChange(event.target.value)}
                     value={value}
                     name={name}
@@ -42,6 +43,7 @@ export const FormField: React.FC<Props> = ({ label, name, type, value, error, on
             ) : (
                 <Input
                     type={type}
+                    id={name}
                     onChange={(event) => onChange(event.target.value)}
                     value={value}
                     name={name}

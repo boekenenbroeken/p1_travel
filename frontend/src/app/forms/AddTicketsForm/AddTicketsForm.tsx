@@ -41,10 +41,8 @@ export const AddTicketsForm = ({ onSubmit }: FormProps<AddTicketsFormValues>) =>
         }
     };
 
-    console.log({ loading });
-
     return (
-        <Grid>
+        <Grid data-testid="add-tickets-form">
             {FORM_FIELDS.map((field) => (
                 <Grid.Col span={field.column} key={field.name}>
                     <Controller

@@ -2,6 +2,10 @@ import { BaseComponent } from '../../../app/interfaces/BaseComponent';
 import classNames from 'classnames';
 import { createStyles } from '@mantine/core';
 
+interface Props extends BaseComponent {
+    htmlFor: string;
+}
+
 const useStyles = createStyles((theme) => ({
     label: {
         fontWeight: 'bold',
@@ -10,8 +14,12 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export const FormLabel = ({ children, className }: BaseComponent) => {
+export const FormLabel = ({ children, className, htmlFor }: Props) => {
     const { classes } = useStyles();
 
-    return <span className={classNames(className, classes.label)}>{children}</span>;
+    return (
+        <label htmlFor={htmlFor} className={classNames(className, classes.label)}>
+            {children}
+        </label>
+    );
 };

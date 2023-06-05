@@ -17,6 +17,7 @@ export const Button = ({ onClick, isLoading, children }: Props) => {
 
     return (
         <ButtonUI
+            data-testid="button"
             className={classes.root}
             loading={isLoading}
             loaderProps={{ variant: 'dots' }}
