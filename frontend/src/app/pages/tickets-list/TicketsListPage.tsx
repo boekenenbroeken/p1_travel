@@ -10,8 +10,11 @@ import { Error } from '../../../view/components/Error/Error';
 
 const useStyles = createStyles((theme) => ({
     formContainer: {
-        width: 850,
-        minHeight: 500,
+        maxWidth: '850px',
+        minHeight: '500px',
+        height: '100%',
+        width: '100%',
+        marginBottom: theme.spacing.xl,
     },
     header: {
         marginTop: 0,

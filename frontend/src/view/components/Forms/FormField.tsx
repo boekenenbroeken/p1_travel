@@ -2,6 +2,7 @@ import React from 'react';
 import { Input, Textarea } from '@mantine/core';
 import { FormLabel } from './FormLabel';
 import { createStyles } from '@mantine/core';
+import { colors } from '../../../app/constants/colors';
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
@@ -11,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     errorMessage: {
         position: 'absolute',
         top: '100%',
-        color: theme.colors.red[6],
+        color: colors.red,
         fontSize: theme.fontSizes.xs,
     },
 }));

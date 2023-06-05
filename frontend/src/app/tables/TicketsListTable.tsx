@@ -1,5 +1,4 @@
-import React from 'react';
-import { Table } from '@mantine/core';
+import { Table, createStyles } from '@mantine/core';
 
 export interface TicketsListTableItemVM {
     id: string;
@@ -11,11 +10,18 @@ export interface TicketsListTableItemVM {
     supplier: string;
 }
 
-interface TicketsListTableProps {
+interface Props {
     items: TicketsListTableItemVM[];
 }
+const useStyles = createStyles((_theme) => ({
+    root: {
+        overflowX: 'auto',
+    },
+}));
 
-export const TicketsListTable = ({ items }: TicketsListTableProps) => {
+export const TicketsListTable = ({ items }: Props) => {
+    const { classes } = useStyles();
+
     const rows = items.map((element) => (
         <tr key={element.id}>
             <td>{element.email}</td>
@@ -28,18 +34,20 @@ export const TicketsListTable = ({ items }: TicketsListTableProps) => {
     ));
 
     return (
-        <Table>
-            <thead>
-                <tr>
-                    <th>Email</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Amount</th>
-                    <th>Supplier</th>
-                </tr>
-            </thead>
-            <tbody>{rows}</tbody>
-        </Table>
+        <div className={classes.root}>
+            <Table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Amount</th>
+                        <th>Supplier</th>
+                    </tr>
+                </thead>
+                <tbody>{rows}</tbody>
+            </Table>
+        </div>
     );
 };

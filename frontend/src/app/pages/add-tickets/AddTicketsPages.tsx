@@ -5,7 +5,7 @@ import { AppDispatch } from '../../store/store';
 import { useDispatch } from 'react-redux';
 import { addTicket } from '../../store/api';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles((_theme) => ({
     formContainer: {
         width: 500,
         minHeight: 500,

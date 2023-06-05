@@ -3,8 +3,9 @@ import { BaseComponent } from '../../../app/interfaces/BaseComponent';
 import { useGenericStyles } from '../../../app/styles/useGenericStyles';
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
+import { colors } from '../../../app/constants/colors';
 
-interface NavLinkProps extends BaseComponent {
+interface Props extends BaseComponent {
     to: string;
 }
 
@@ -14,7 +15,7 @@ const useStyles = createStyles((theme) => ({
         paddingLeft: theme.spacing.md,
         paddingRight: theme.spacing.md,
         textDecoration: 'none',
-        color: 'white',
+        color: colors.white,
     },
 
     activeLink: {
@@ -22,7 +23,7 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export const NavLink = ({ children, to }: NavLinkProps) => {
+export const NavLink = ({ children, to }: Props) => {
     const location = useLocation();
     const { classes } = useStyles();
     const { classes: genericClasses } = useGenericStyles();

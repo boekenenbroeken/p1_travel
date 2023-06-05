@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
 import { store } from './app/store/store';
 import { ROUTES } from './app/constants/routes';
+import { BREAKPOINTS } from './app/constants/grid';
 import { Notifications } from './view/components/Notifications/Notifications';
 import { PageLayout } from './view/components/PageLayout/PageLayout';
 
@@ -13,6 +14,7 @@ const App = () => (
             withNormalizeCSS
             theme={{
                 colorScheme: 'light',
+                breakpoints: BREAKPOINTS,
             }}
         >
             <Notifications />
