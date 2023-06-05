@@ -1,5 +1,5 @@
 export interface Ticket {
-    id: number;
+    id: string;
     email: string;
     title: string;
     description: string;

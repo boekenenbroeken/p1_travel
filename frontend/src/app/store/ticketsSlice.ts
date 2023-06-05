@@ -1,14 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface Ticket {
-    id: string;
-    title: string;
-    description: string;
-    price: string;
-    amount: number;
-    supplier: string;
-    email: string;
-}
+import { Ticket } from 'data/models/Ticket';
 
 interface TicketsState {
     data: Ticket[];

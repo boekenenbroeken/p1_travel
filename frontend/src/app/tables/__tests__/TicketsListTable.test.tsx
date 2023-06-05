@@ -8,7 +8,7 @@ describe('TicketsListTable', () => {
             email: 'test@example.com',
             title: 'Test Ticket',
             description: 'Test description',
-            price: '10.99',
+            price: 10,
             amount: 5,
             supplier: 'Test Supplier',
         },

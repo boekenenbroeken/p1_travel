@@ -22,7 +22,9 @@ export const AddTicketsPage = () => {
     const { classes } = useStyles();
 
     const onFormSubmit = async (values: AddTicketsFormValues) => {
-        return dispatch(addTicket({ ...values, price: Number(values.price), id: Date.now() }));
+        return dispatch(
+            addTicket({ ...values, price: Number(values.price), id: String(Date.now()) })
+        );
     };
 
     return (

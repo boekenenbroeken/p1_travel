@@ -85,7 +85,7 @@ describe('AddTicketsForm', () => {
             email: 'test@example.com',
             title: 'Test Ticket',
             description: 'Test description',
-            price: '1099',
+            price: 1099,
             amount: 5,
             supplier: 'Test Supplier',
         });
@@ -123,8 +123,6 @@ describe('AddTicketsForm', () => {
         });
 
         const button = screen.getByText('Add tickets');
-
-        console.log({ button });
 
         await act(async () => {
             fireEvent.click(button);
