@@ -56,13 +56,18 @@ const formFields = [
 ];
 
 export const AddTicketsForm = ({ onSubmit }: FormProps<AddTicketsFormValues>) => {
-    const { control, handleSubmit, formState } = useForm<AddTicketsFormValues>({
+    const { control, handleSubmit, formState, reset } = useForm<AddTicketsFormValues>({
         defaultValues,
         resolver: yupResolver(validationSchema),
     });
 
     const { errors } = formState as { errors: FieldErrors<AddTicketsFormValues> };
     const { classes } = useStyles();
+
+    const handleFormSubmit = (data: AddTicketsFormValues) => {
+        onSubmit(data);
+        reset();
+    };
 
     return (
         <Grid>
@@ -85,7 +90,7 @@ export const AddTicketsForm = ({ onSubmit }: FormProps<AddTicketsFormValues>) =>
                 </Grid.Col>
             ))}
             <Grid.Col span={GRID.fullColumn} className={classes.buttonContainer}>
-                <Button onClick={handleSubmit(onSubmit)}>Add tickets</Button>
+                <Button onClick={handleSubmit(handleFormSubmit)}>Add tickets</Button>
             </Grid.Col>
         </Grid>
     );
