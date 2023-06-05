@@ -1,6 +1,5 @@
 import { createStyles, Grid } from '@mantine/core';
-import { ChildlessBaseComponent } from '../../../app/interfaces/BaseComponent';
-import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import { NavLink } from './NavLink';
 import { colors } from '../../../app/constants/colors';
 import { ROUTES } from '../../../app/constants/routes';
@@ -21,13 +20,15 @@ const useStyles = createStyles((theme) => ({
     },
 }));
 
-export const Navbar = ({ className }: ChildlessBaseComponent) => {
+export const Navbar = () => {
     const { classes } = useStyles();
 
     return (
-        <Grid className={classNames(className, classes.navbarContainer)}>
+        <Grid className={classes.navbarContainer}>
             <Grid.Col span={GRID.halfColumn}>
-                <img src="/images/ET-logo.png" alt="Events travel logo" />
+                <Link to="/">
+                    <img src="/images/ET-logo.png" alt="Events travel logo" />
+                </Link>
             </Grid.Col>
             <Grid.Col span={GRID.halfColumn} className={classes.linksContainer}>
                 {ROUTES.map(({ path, name }) => (
