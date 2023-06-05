@@ -22,8 +22,8 @@ export const AddTicketsPage = () => {
     const dispatch: AppDispatch = useDispatch();
     const { classes } = useStyles();
 
-    const onFormSubmit = (values: AddTicketsFormValues) => {
-        dispatch(addTicket({ ...values, price: Number(values.price), id: Date.now() }));
+    const onFormSubmit = async (values: AddTicketsFormValues) => {
+        return dispatch(addTicket({ ...values, price: Number(values.price), id: Date.now() }));
     };
 
     return (

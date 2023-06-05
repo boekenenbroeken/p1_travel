@@ -1,7 +1,7 @@
 export interface FormProps<T> {
     values?: T;
     defaultValues?: T;
-    onSubmit: (values: T) => void;
+    onSubmit: (values: T) => Promise<void>;
     loading?: boolean;
     disableSubmit?: boolean;
 }
