@@ -4,7 +4,6 @@ import { Paper, createStyles, Center } from '@mantine/core';
 import type { AppDispatch, RootState } from '../../store/store';
 import { getTickets } from '../../store/api';
 import { colors } from '../../constants/colors';
-import { PageLayout } from '../../../view/components/PageLayout/PageLayout';
 import { TicketsListTable } from '../../tables/TicketsListTable';
 import { Loader } from '../../../view/components/Loader/Loader';
 import { Error } from '../../../view/components/Error/Error';
@@ -34,13 +33,11 @@ export const TicketsListPage = () => {
     if (error) return <Error />;
 
     return (
-        <PageLayout>
-            <Center>
-                <Paper p="xl" shadow="md" className={classes.formContainer}>
-                    <h3 className={classes.header}>Tickets list</h3>
-                    <TicketsListTable items={data} />
-                </Paper>
-            </Center>
-        </PageLayout>
+        <Center>
+            <Paper p="xl" shadow="md" className={classes.formContainer}>
+                <h3 className={classes.header}>Tickets list</h3>
+                <TicketsListTable items={data} />
+            </Paper>
+        </Center>
     );
 };

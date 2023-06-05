@@ -12,6 +12,7 @@ const useStyles = createStyles((theme) => ({
         paddingRight: theme.spacing.lg,
         paddingLeft: theme.spacing.lg,
         alignItems: 'center',
+        marginBottom: 40,
     },
     linksContainer: {
         display: 'flex',
@@ -29,9 +30,9 @@ export const Navbar = ({ className }: ChildlessBaseComponent) => {
                 <img src="/images/ET-logo.png" alt="Events travel logo" />
             </Grid.Col>
             <Grid.Col span={GRID.halfColumn} className={classes.linksContainer}>
-                {ROUTES.map((route) => (
-                    <NavLink key={route.path} to={route.path}>
-                        {route.name}
+                {ROUTES.map(({ path, name }) => (
+                    <NavLink key={path} to={path}>
+                        {name}
                     </NavLink>
                 ))}
             </Grid.Col>

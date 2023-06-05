@@ -1,5 +1,4 @@
 import { Paper, createStyles, Center } from '@mantine/core';
-import { PageLayout } from '../../../view/components/PageLayout/PageLayout';
 import { AddTicketsForm, AddTicketsFormValues } from '../../forms/AddTicketsForm';
 import { colors } from '../../constants/colors';
 import { AppDispatch } from '../../store/store';
@@ -27,13 +26,11 @@ export const AddTicketsPage = () => {
     };
 
     return (
-        <PageLayout>
-            <Center>
-                <Paper p="xl" shadow="md" className={classes.formContainer}>
-                    <h3 className={classes.header}>Add Tickets</h3>
-                    <AddTicketsForm onSubmit={onFormSubmit} />
-                </Paper>
-            </Center>
-        </PageLayout>
+        <Center>
+            <Paper p="xl" shadow="md" className={classes.formContainer}>
+                <h3 className={classes.header}>Add Tickets</h3>
+                <AddTicketsForm onSubmit={onFormSubmit} />
+            </Paper>
+        </Center>
     );
 };

@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-d
 import { store } from './app/store/store';
 import { ROUTES } from './app/constants/routes';
 import { Notifications } from './view/components/Notifications/Notifications';
+import { PageLayout } from './view/components/PageLayout/PageLayout';
 
 const App = () => (
     <Provider store={store}>
@@ -16,15 +17,17 @@ const App = () => (
         >
             <Notifications />
             <Router>
-                <Routes>
-                    {ROUTES.map((route) => {
-                        const { path, element: Element } = route;
+                <PageLayout>
+                    <Routes>
+                        {ROUTES.map((route) => {
+                            const { path, element: Element } = route;
 
-                        return <Route key={path} path={path} element={<Element />} />;
-                    })}
+                            return <Route key={path} path={path} element={<Element />} />;
+                        })}
 
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                    </Routes>
+                </PageLayout>
             </Router>
         </MantineProvider>
     </Provider>
