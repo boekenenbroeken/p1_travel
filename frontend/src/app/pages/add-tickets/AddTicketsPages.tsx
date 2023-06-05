@@ -1,4 +1,3 @@
-import React from 'react';
 import { Paper, createStyles, Center } from '@mantine/core';
 import { PageLayout } from '../../../view/components/PageLayout/PageLayout';
 import { AddTicketsForm, AddTicketsFormValues } from '../../forms/AddTicketsForm';

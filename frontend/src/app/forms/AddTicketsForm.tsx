@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { FormField } from '../../view/components/Forms/FormField';
 import { GRID } from '../constants/grid';
 import { FieldErrors } from 'react-hook-form';
+import { showNotification } from '../../view/components/Notifications/Notifications';
 
 const useStyles = createStyles((_theme) => ({
     buttonContainer: {
@@ -65,8 +66,13 @@ export const AddTicketsForm = ({ onSubmit }: FormProps<AddTicketsFormValues>) =>
     const { classes } = useStyles();
 
     const handleFormSubmit = (data: AddTicketsFormValues) => {
-        onSubmit(data);
-        reset();
+        try {
+            onSubmit(data);
+            reset(); // Clear the form values
+            showNotification('success');
+        } catch (error) {
+            showNotification('error');
+        }
     };
 
     return (

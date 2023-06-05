@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { Route, BrowserRouter as Router, Routes, Navigate } from 'react-router-dom';
 import { store } from './app/store/store';
 import { ROUTES } from './app/constants/routes';
+import { Notifications } from './view/components/Notifications/Notifications';
 
 const App = () => (
     <Provider store={store}>
@@ -13,6 +14,7 @@ const App = () => (
                 colorScheme: 'light',
             }}
         >
+            <Notifications />
             <Router>
                 <Routes>
                     {ROUTES.map((route) => {
@@ -20,6 +22,7 @@ const App = () => (
 
                         return <Route key={path} path={path} element={<Element />} />;
                     })}
+
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </Router>
