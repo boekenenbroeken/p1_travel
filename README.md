@@ -8,8 +8,8 @@ The repository contains two projects: **Frontend** & **API**.
 - **Home page**. The home page includes a form for adding a new ticket to the system.
 - **Tickets page**. The tickets page displays a list of all the tickets.
 
-![image](https://github.com/boekenenbroeken/p1_travel/assets/19558184/65cb5718-bac3-41ff-b8fa-7e5c1bf88f0f)
-![image](https://github.com/boekenenbroeken/p1_travel/assets/19558184/75875260-4f16-4ba5-873a-703bafe016b2)
+![image](https://github.com/boekenenbroeken/p1_travel/assets/19558184/94cff765-4a58-46cd-bf1b-fa113c26b48b)
+![image](https://github.com/boekenenbroeken/p1_travel/assets/19558184/c6267021-7146-40fb-9c74-8e30c7420420)
 
 
 ## Technologies used
