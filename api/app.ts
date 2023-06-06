@@ -2,8 +2,10 @@ import express, { Application } from "express";
 import http from "http";
 import bodyParser from "body-parser";
 import authAnonymousRoutes from "./routes/tickets/tickets";
+import cors from "cors";
 
 const app: Application = express();
+app.use(cors());
 const server = http.createServer(app);
 
 // Setup
